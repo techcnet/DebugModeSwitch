@@ -1,0 +1,94 @@
+<?php namespace ProcessWire;
+
+/**
+ * Debug Mode Switch
+ * Enables the debug mode to bypass restriction to install modules.
+ *
+ * @author tech-c.net
+ * @license Licensed under GNU/GPL v2
+ * @link https://tech-c.net/posts/debug-mode-switch-for-processwire/
+ * @version 1.0.0
+ * 
+ * @see Forum Thread: https://processwire.com/talk/topic/.../
+ * @see Donate: https://www.paypal.me/techcnet/
+ */
+
+class DebugModeSwitch extends WireData implements Module, ConfigurableModule {
+  /**
+   * Return information about this module
+   */
+  public static function getModuleInfo() {
+    return array(
+      'title' => 'Debug Mode Switch',
+      'summary' => 'Enables the debug mode to bypass restriction to install modules.',
+      'href' => 'https://tech-c.net/posts/debug-mode-switch-for-processwire/',
+      'author' => 'tech-c.net',
+      'version' => 100,
+      'icon' => 'bug',
+      'autoload' => true,
+      'singular' => true);
+  }
+  /**
+   * Instance of module
+   */
+  public function __construct() {
+    foreach(self::getDefaultData() as $key => $value) {
+      $this->$key = $value;
+    }
+  }
+  /**
+   * Default configuration for module
+   */
+  static public function getDefaultData() {
+    return array(
+      'active' => 0,
+      'superuser' => 1
+    );
+  }
+  /**
+   * Module settings
+   */
+  static public function getModuleConfigInputfields(array $data) {
+    $fields = new InputfieldWrapper();
+    $modules = wire('modules');
+    $defaults = self::getDefaultData();
+    $data = array_merge($defaults, $data);
+
+    $field = $modules->get('InputfieldCheckbox');
+    $field->name = 'active';
+    $field->label = __('Debug Mode');
+    $field->description = __('Enables the debug mode.');
+    $field->attr('name', 'active');
+    $field->attr('checked', $data['active'] ? 'checked' : '');
+    $field->label2 = __('Enabled');
+    $fields->add($field);
+
+    $field = $modules->get('InputfieldCheckbox');
+    $field->name = 'superuser';
+    $field->label = __('Only for Superusers');
+    $field->description = __('Restricts the debug mode to superusers only.');
+    $field->attr('name', 'superuser');
+    $field->attr('checked', $data['superuser'] ? 'checked' : '');
+    $field->label2 = __('Enabled');
+    $fields->add($field);
+
+    return $fields;
+  }
+  /**
+   * Initialize the module
+   */
+  public function init() {
+    $data = $this->modules->getModuleConfigData($this->className);
+    $defaults = $this->modules->get($this->className)->getDefaultData();
+    $data = array_merge($defaults, $data);
+    if ($data['active'] == '1') {
+      if ($data['superuser'] == '1') {
+        if ($this->user->hasRole('superuser')) {
+          $this->config->debug = true;
+        }
+      } else {
+        $this->config->debug = true;
+      }
+    }
+  }
+}
