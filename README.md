@@ -1,6 +1,9 @@
 # Debug Mode Switch for ProcessWire
 
-This module for ProcessWire enables the debug mode to bypass restriction to install modules. This is useful if you are tired to manually set the debug mode in the configuration file. Please note that this module doesn't replace the debug mode. You will not receive any errors/notices/warnings like in the real debug mode. It serves only to bypass the restriction to install modules.
+This module for ProcessWire enables the debug mode to bypass the restriction to install modules. This is useful if you are tired to manually set the debug mode in the configuration file.
+
+## Note
+Please note that this module doesn't replace the debug mode value ($config->debug) in the configuration file. With this module you will not receive any errors/notices/warnings like in the real debug mode. It serves only to bypass the restriction to install modules.
 
 ## Open the module settings
 The settings for this module are located in the menu Modules=>Configure=>DebugModeSwitch.
