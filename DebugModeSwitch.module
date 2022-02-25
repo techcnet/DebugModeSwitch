@@ -2,15 +2,15 @@
 
 /**
  * Debug Mode Switch
- * Enables the debug mode to bypass restriction to install modules.
+ * Enables the debug mode to bypass the restriction to install modules.
  *
  * @author tech-c.net
  * @license Licensed under GNU/GPL v2
  * @link https://tech-c.net/posts/debug-mode-switch-for-processwire/
- * @version 1.0.0
+ * @version 1.0.1
  * 
  * @see Forum Thread: https://processwire.com/talk/topic/.../
- * @see Donate: https://www.paypal.me/techcnet/
+ * @see Donate: https://tech-c.net/donation/
  */
 
 class DebugModeSwitch extends WireData implements Module, ConfigurableModule {
@@ -20,10 +20,10 @@ class DebugModeSwitch extends WireData implements Module, ConfigurableModule {
   public static function getModuleInfo() {
     return array(
       'title' => 'Debug Mode Switch',
-      'summary' => 'Enables the debug mode to bypass restriction to install modules.',
+      'summary' => 'Enables the debug mode to bypass the restriction to install modules.',
       'href' => 'https://tech-c.net/posts/debug-mode-switch-for-processwire/',
       'author' => 'tech-c.net',
-      'version' => 100,
+      'version' => 101,
       'icon' => 'bug',
       'autoload' => true,
       'singular' => true);
