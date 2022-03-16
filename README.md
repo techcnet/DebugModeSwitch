@@ -10,7 +10,7 @@ To install this module you have to enable the real debug mode. After installatio
 
 !["Real Debug Mode"](https://tech-c.net/site/assets/files/1214/debug-mode.jpg)
 
-For all future module installations, you just have to enable the debug mode in the module settings like described below. After installation, you should deactivate it in the same way.
+For all future module installations, you just have to enable the debug mode in the module settings like described below. After module installation, you should deactivate it in the same way.
 
 ## Settings
 The settings for this module are located in the menu Modules=>Configure=>DebugModeSwitch.
