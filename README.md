@@ -6,11 +6,11 @@ This module for ProcessWire enables the debug mode to bypass the restriction to 
 Please note that this module doesn't replace the real debug mode in the configuration file **/site/config.php**. With this module you will not receive any errors/notices/warnings like in the real debug mode. It serves only to bypass the restriction to install modules.
 
 ## Installation
-To install this module you have to enable the real debug mode. After installation you should deactivate debug mode again. To enable the real debug mode, download **/site/config.php** via FTP and open it in a text editor. Look for a line where you can find **$config->debug = false;**, change it to **$config->debug = true;**, save the file and upload it again. After module installation, change it back to **$config->debug = false;**.
+To install this module you have to enable the real debug mode. After installation you should deactivate debug mode again. To enable the real debug mode, download **/site/config.php** via FTP and open it in a text editor. Look for a line where you can find **$config->debug = false;**, change it to **$config->debug = true;**, save the file and upload it again. After module installation change it back to **$config->debug = false;**.
 
 !["Real Debug Mode"](https://tech-c.net/site/assets/files/1214/debug-mode.jpg)
 
-For any future module installations you just enable and deactivate the debug mode in the module settings like described below.
+For all future module installations, you just have to enable the debug mode in the module settings like described below. After installation, you should deactivate it in the same way.
 
 ## Settings
 The settings for this module are located in the menu Modules=>Configure=>DebugModeSwitch.
