@@ -1,5 +1,9 @@
 # Debug Mode Switch for ProcessWire
 
+![GitHub](https://img.shields.io/github/license/techcnet/DebugModeSwitch)
+![GitHub last commit](https://img.shields.io/github/last-commit/techcnet/DebugModeSwitch)
+[![PHPMD](https://github.com/techcnet/DebugModeSwitch/actions/workflows/phpmd.yml/badge.svg)](https://github.com/techcnet/DebugModeSwitch/actions/workflows/phpmd.yml)
+
 This module for ProcessWire enables the debug mode to bypass the restriction to install modules. This is useful if you are tired to manually set the debug mode in the configuration.
 
 ## Note
